@@ -24,7 +24,7 @@ import { TranslationComponent } from './translation/translation.component';
       loader: {
         provide: TranslateLoader,
         useFactory: (http: HttpClient) => {
-          return new TranslateHttpLoader(http);
+          return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
         },
         deps: [ HttpClient ]
       }
@@ -35,6 +35,4 @@ import { TranslationComponent } from './translation/translation.component';
 })
 export class AppModule { }
 
-export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
-}
+
