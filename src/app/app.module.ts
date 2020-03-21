@@ -34,3 +34,7 @@ import { TranslationComponent } from './translation/translation.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
